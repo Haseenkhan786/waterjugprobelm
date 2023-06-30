@@ -1,0 +1,64 @@
+<!-- <app-root> -->
+
+
+<form  #formData="ngForm" (ngSubmit)="submitForm()" >
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required minlength="2">
+    
+  </div>
+
+  <div>
+    <label for="gender">Gender</label>
+    <select id="gender" [(ngModel)]="gender" name="gender" required>
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+   
+  </div>
+
+  <div>
+    <label for="fromDate">From Date:</label>
+    <input type="date" id="fromDate" [(ngModel)]="fromDate" name="fromDate" required>
+  
+  </div>
+  
+  <div>
+    <label for="toDate">To Date:</label>
+    <input type="date" id="toDate" [(ngModel)]="toDate" name="toDate" required>
+   
+  </div>
+
+  <div>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" [(ngModel)]="phone" name="phone" required pattern="[0-9]{10}">
+   
+  </div>
+
+  <div>
+    <label for="file">Upload File:</label>
+    <input type="file" id="file" (change)="onFileSelected($event)" name="file" accept=".pdf,.png" required>
+   
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+   
+  </div>
+
+  <button type="submit" [disabled]="formData.invalid">Submit</button>
+  <button type="reset">Clear</button>
+
+  <div>
+   
+    <a href="http://localhost:8080/getemployees" target="_blank">View data</a>
+
+  </div>
+
+</form>
+
+
+<!-- </app-root> -->
